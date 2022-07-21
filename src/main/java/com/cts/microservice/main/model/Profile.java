@@ -30,8 +30,8 @@ public class Profile {
 	private String lastname;
 	@Column
 	private String email;
-	@Column
-	private String studentnumber;
+//	@Column
+//	private String idnumber;
 	@Column
 	private String phonenumber;
 	@Column

@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.cts.microservice.main.model.JwtTokenResponse;
 import com.cts.microservice.main.model.Profile;
 import com.cts.microservice.main.model.UserCredential;
+import com.cts.microservice.main.service.ProfileService;
 import com.cts.microservice.main.service.UserValidationService;
 import com.cts.microservice.main.util.JwtUtil;
 
@@ -36,6 +37,9 @@ public class ProfileController {
 
 	@Autowired
 	private UserValidationService userValidationService;
+	
+	@Autowired
+	private ProfileService pService;
 	
 	@Autowired
 	private PasswordEncoder bcryptEncoder;
@@ -115,6 +119,11 @@ public class ProfileController {
 		boolean exist = userValidationService.checkEmail(email);
 		return exist;
 
+	}
+	
+	@GetMapping("/jpa/users/{username}/profile/details")
+	public Profile getProfileDetails(@PathVariable String username) {
+		return pService.fetchByUserName(username);
 	}
 	
 }

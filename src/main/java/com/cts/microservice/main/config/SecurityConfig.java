@@ -4,9 +4,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -79,4 +81,25 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		httpSecurity.headers().frameOptions().sameOrigin() // H2 Console Needs this setting
 				.cacheControl(); // disable caching
 	}
+	
+	 @Override
+	    public void configure(WebSecurity webSecurity) throws Exception {
+	        webSecurity
+	            .ignoring().antMatchers(HttpMethod.POST, "/register","/updateProfile","/jpa/checkuser/**","/jpa/uploadAvatar/*","/downloadFile/*","/jpa/uploadBackground/*").and()
+	            .ignoring()
+	            .antMatchers(
+	                HttpMethod.POST,
+	                 "/authenticate"
+	            )
+	            .antMatchers(HttpMethod.OPTIONS, "/**")
+	            .and()
+	            .ignoring()
+	            .antMatchers(
+	                HttpMethod.GET,
+	                "/" //Other Stuff You want to Ignore
+	            )
+	            .and()
+	            .ignoring()
+	            .antMatchers("/h2-console/**/**");//Should not be in Production!
+	    }
 }

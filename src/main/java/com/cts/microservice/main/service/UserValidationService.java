@@ -91,7 +91,7 @@ public class UserValidationService implements UserDetailsService{
 
 			newProfile.setFirstname(profile.getFirstname());
 			newProfile.setLastname(profile.getLastname());
-			newProfile.setStudentnumber(profile.getStudentnumber());
+//			newProfile.setIdnumber(profile.getStudentnumber());
 			newProfile.setPhonenumber(profile.getPhonenumber());
 			newProfile.setEmail(profile.getEmail());
 			newProfile.setAboutme(profile.getAboutme());
