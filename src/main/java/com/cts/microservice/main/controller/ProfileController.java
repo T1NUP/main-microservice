@@ -1,5 +1,6 @@
 package com.cts.microservice.main.controller;
 
+import java.util.List;
 import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +9,6 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -51,6 +51,11 @@ public class ProfileController {
 	public String hello() {
 
 		return "Hello World";
+	}
+	
+	@GetMapping("/jpa/users/")
+	public List<UserCredential> getAllUser() {
+		return userValidationService.getAllUsers();
 	}
 	
 	@PostMapping(value = "/authenticate")

@@ -48,6 +48,10 @@ public class UserValidationService implements UserDetailsService{
 					new ArrayList<>());
 	    }
 	 
+	 public List<UserCredential> getAllUsers(){
+		 return credsRepository.findAll();
+	 }
+	 
 	 public UserCredential save(UserCredential user) throws Exception {
 			boolean validUsername = Pattern.matches(usernameRegex, user.getUsername());
 			boolean validPassword = Pattern.matches(passwordRegex, user.getPassword());
