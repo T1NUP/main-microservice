@@ -70,7 +70,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 		httpSecurity.csrf().disable()// dont authenticate this particular request
 				.authorizeRequests()
-				.antMatchers("/jpa/checkuser/**", "/updateProfile", "/authenticate", "/register")
+				.antMatchers("/jpa/checkuser/**", "/updateProfile", "/authenticate", "/register","/avatar/*","/background/*","/jpa/uploadBackground/*","/jpa/uploadAvatar/*")
 				.permitAll().and().exceptionHandling()
 				.authenticationEntryPoint(jwtUnAuthorizedResponseAuthenticationEntryPoint).and().sessionManagement()
 				.sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().authorizeRequests().anyRequest()
