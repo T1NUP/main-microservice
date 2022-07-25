@@ -2,6 +2,9 @@ package com.cts.microservice.main.model;
 
 import java.io.Serializable;
 
+import lombok.Data;
+
+@Data
 public class JwtTokenResponse implements Serializable {
 	
 	/**
@@ -15,7 +18,5 @@ public class JwtTokenResponse implements Serializable {
         this.token = token;
     }
 
-    public String getToken() {
-        return this.token;
-    }
+   
 }

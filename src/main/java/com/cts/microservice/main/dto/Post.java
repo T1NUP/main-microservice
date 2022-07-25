@@ -1,29 +1,30 @@
-package com.cts.microservice.main.dto;
-
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class Post {
-	
-	private Long id;
-	private String username;
-	private String description;
-	private Date targetDate;
-	private String image;
-	private boolean isDone;
-
-	private List<PostComment> comments= new ArrayList<>();
-	
-	private List<Like> likes = new ArrayList<>();
-
+//package com.cts.microservice.main.dto;
+//
+//import java.util.ArrayList;
+//import java.util.Arrays;
+//import java.util.Date;
+//import java.util.List;
+//
+//import lombok.AllArgsConstructor;
+//import lombok.Data;
+//import lombok.NoArgsConstructor;
+//
+//@Data
+//@NoArgsConstructor
+//@AllArgsConstructor
+//public class Post {
+//	
+//	private Long id;
+//	private String username;
+//	private String description;
+//	private Date targetDate;
+//	private String image;
+//	private boolean isDone;
+//
+//	private List<PostComment> comments= new ArrayList<>();
+//	
+//	private List<Like> likes = new ArrayList<>();
+//
 //	public Post() {
 //
 //	}
@@ -126,28 +127,28 @@ public class Post {
 //		System.out.println("Print first comment");
 //		System.out.println(comments.get(0).toString());
 //	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + (int) (id ^ (id >>> 32));
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Post other = (Post) obj;
-		if (id != other.id)
-			return false;
-		return true;
-	}
-
-	
-}
+//
+//	@Override
+//	public int hashCode() {
+//		final int prime = 31;
+//		int result = 1;
+//		result = prime * result + (int) (id ^ (id >>> 32));
+//		return result;
+//	}
+//
+//	@Override
+//	public boolean equals(Object obj) {
+//		if (this == obj)
+//			return true;
+//		if (obj == null)
+//			return false;
+//		if (getClass() != obj.getClass())
+//			return false;
+//		Post other = (Post) obj;
+//		if (id != other.id)
+//			return false;
+//		return true;
+//	}
+//
+//	
+//}

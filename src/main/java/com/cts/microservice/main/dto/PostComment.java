@@ -1,21 +1,21 @@
-package com.cts.microservice.main.dto;
-
-import java.util.Date;
-
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class PostComment {
-
-    private long id;
-    private String username;
-    private String description;
-    private Date targetDate;
-
+//package com.cts.microservice.main.dto;
+//
+//import java.util.Date;
+//
+//import lombok.AllArgsConstructor;
+//import lombok.Data;
+//import lombok.NoArgsConstructor;
+//
+//@Data
+//@NoArgsConstructor
+//@AllArgsConstructor
+//public class PostComment {
+//
+//    private long id;
+//    private String username;
+//    private String description;
+//    private Date targetDate;
+//
 //    public PostComment() {
 //        // Default consturctor
 //    }
@@ -37,9 +37,9 @@ public class PostComment {
 //    public Date getTargetDate() {
 //        return targetDate;
 //    }
-
-    @Override
-    public String toString() {
-        return String.format("%s: %s\n", username, description);
-    }
-}
+//
+//    @Override
+//    public String toString() {
+//        return String.format("%s: %s\n", username, description);
+//    }
+//}
